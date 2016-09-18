@@ -8,6 +8,9 @@ Vagrant.configure(2) do |config|
   # Use an inline shell provisioner for basic setup 
   config.vm.provision 'shell', inline: shell, privileged: false
 
+  # Support for phpLDAPadmin on port 80
+  config.vm.network "forwarded_port", guest: 80, host: 3080, id: "phpldapadmin"
+  
   config.vm.provider 'virtualbox' do |vb|
     vb.memory = 1024
     vb.cpus   = 1
