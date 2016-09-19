@@ -1,0 +1,16 @@
+dn: uid=hwashburne,ou=users,dc=home,dc=net
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: hwashburne
+uid: hwashburne
+uidNumber: 16504
+gidNumber: 104
+homeDirectory: /home/hwashburne
+loginShell: /bin/bash
+gecos: hwashburne
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0

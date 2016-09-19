@@ -1,0 +1,16 @@
+dn: uid=jcobb,ou=users,dc=home,dc=net
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: jcobb
+uid: jcobb
+uidNumber: 16501
+gidNumber: 101
+homeDirectory: /home/jcobb
+loginShell: /bin/bash
+gecos: jcobb
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0

@@ -1,0 +1,16 @@
+dn: uid=iserra,ou=users,dc=home,dc=net
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: iserra
+uid: iserra
+uidNumber: 16502
+gidNumber: 102
+homeDirectory: /home/iserra
+loginShell: /bin/bash
+gecos: iserra
+userPassword: {crypt}x
+shadowLastChange: 0
+shadowMax: 0
+shadowWarning: 0
