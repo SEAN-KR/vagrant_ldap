@@ -1,4 +1,4 @@
-dn: uid=mreynlods,ou=users,dc=home,dc=net
+dn: uid=mreynolds,ou=users,dc=home,dc=net
 objectClass: top
 objectClass: account
 objectClass: posixAccount
