@@ -9,16 +9,19 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'shell', inline: shell, privileged: false
 
   # Copy phpldapadmin config file
-  config.vm.provision "file", source: "files/config.php", destination: "config.php"
+  config.vm.provision "file", source: "files/config.php", destination: "/home/vagrant/LDAP_CONFIG/config.php"
 
   # Copy sample set of users to import into OpenLDAP
-  config.vm.provision "file", source: "files/malcolm.ldif", destination: "malcolm.ldif"
-  config.vm.provision "file", source: "files/jayne.ldif", destination: "jayne.ldif"
-  config.vm.provision "file", source: "files/inara.ldif", destination: "inara.ldif"
-  config.vm.provision "file", source: "files/wash.ldif", destination: "wash.ldif"
-  config.vm.provision "file", source: "files/zoe.ldif", destination: "zoe.ldif"
-  config.vm.provision "file", source: "files/kaylee.ldif", destination: "kaylee.ldif"
-  config.vm.provision "file", source: "files/jfhogarty.ldif", destination: "jfhogarty.ldif"
+  config.vm.provision "file", source: "files/malcolm.ldif", destination: "/home/vagrant/LDAP_CONFIG/malcolm.ldif"
+  config.vm.provision "file", source: "files/jayne.ldif", destination: "/home/vagrant/LDAP_CONFIG/jayne.ldif"
+  config.vm.provision "file", source: "files/inara.ldif", destination: "/home/vagrant/LDAP_CONFIG/inara.ldif"
+  config.vm.provision "file", source: "files/wash.ldif", destination: "/home/vagrant/LDAP_CONFIG/wash.ldif"
+  config.vm.provision "file", source: "files/zoe.ldif", destination: "/home/vagrant/LDAP_CONFIG/zoe.ldif"
+  config.vm.provision "file", source: "files/kaylee.ldif", destination: "/home/vagrant/LDAP_CONFIG/kaylee.ldif"
+  config.vm.provision "file", source: "files/jfhogarty.ldif", destination: "/home/vagrant/LDAP_CONFIG/jfhogarty.ldif"
+  
+  # Run provisioning specific to setting up Salt 
+  config.vm.provision "shell", path: 'provisioning/phpldap_provision.sh'
   
   # Support for phpLDAPadmin on port 80
   config.vm.network "forwarded_port", guest: 80, host: 3080, id: "phpldapadmin"
@@ -31,6 +34,9 @@ end
 
 def shell
   <<-eos
+    echo Make directory for LDAP Config files
+    mkdir /home/vagrant/LDAP_CONFIG
+
     echo Installing basic tools 
     sudo apt-get update
     sudo apt-get -y install vim git-core toilet
@@ -45,6 +51,5 @@ def shell
     sudo apt-get -y install slapd ldap-utils
 
     sudo apt-get -y install phpldapadmin
-    sudo cp /home/vagrant/files/config.php /etc/phpldapadmin/config.php
   eos
 end
