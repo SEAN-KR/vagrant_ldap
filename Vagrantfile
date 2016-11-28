@@ -21,7 +21,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "file", source: "files/jfhogarty.ldif", destination: "/home/vagrant/LDAP_CONFIG/jfhogarty.ldif"
   
   # Run provisioning specific to setting up Salt 
-  config.vm.provision "shell", path: 'provisioning/phpldap_provision.sh'
+  config.vm.provision "shell", path: 'provisioning/phpldapadmin_provision.sh'
   
   # Support for phpLDAPadmin on port 80
   config.vm.network "forwarded_port", guest: 80, host: 3080, id: "phpldapadmin"
