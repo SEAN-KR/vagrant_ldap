@@ -44,10 +44,10 @@ def shell
 
     export DEBIAN_FRONTEND=noninteractive
     echo -e " \
-    slapd    slapd/internal/generated_adminpw    password   openstack
-    slapd    slapd/password2    password    openstack
-    slapd    slapd/internal/adminpw    password openstack
-    slapd    slapd/password1    password    openstack
+    slapd slapd/internal/generated_adminpw password pass1234
+    slapd slapd/password2 password pass1234
+    slapd slapd/internal/adminpw password pass1234
+    slapd slapd/password1 password pass1234
     " | sudo debconf-set-selections
     sudo apt-get -y install slapd ldap-utils
 
