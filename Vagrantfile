@@ -3,7 +3,7 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = "odapper.home.net" 
 
   # Setup static ip address to be used with the Atlassian Suite of Application Servers
-  config.vm.network "private_network", ip: "192.168.50.80"
+  # config.vm.network "private_network", ip: "192.168.50.80"
 
   # Use an inline shell provisioner for basic setup 
   config.vm.provision 'shell', inline: shell, privileged: false
@@ -24,7 +24,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", path: 'provisioning/phpldapadmin_provision.sh'
   
   # Support for phpLDAPadmin on port 80
-  config.vm.network "forwarded_port", guest: 80, host: 3080, id: "phpldapadmin"
+  config.vm.network "forwarded_port", guest: 80, host: 8085, id: "phpldapadmin"
+  config.vm.network "forwarded_port", guest: 389, host: 389, id: "openldap"
   
   config.vm.provider 'virtualbox' do |vb|
     vb.memory = 1024
