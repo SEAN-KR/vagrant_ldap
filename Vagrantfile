@@ -25,7 +25,7 @@ Vagrant.configure(2) do |config|
   
   # Support for phpLDAPadmin on port 80
   config.vm.network "forwarded_port", guest: 80, host: 8085, id: "phpldapadmin"
-  config.vm.network "forwarded_port", guest: 389, host: 389, id: "openldap"
+  config.vm.network "forwarded_port", guest: 3890, host: 3890, id: "openldap"
   
   config.vm.provider 'virtualbox' do |vb|
     vb.memory = 1024
