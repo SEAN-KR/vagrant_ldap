@@ -52,5 +52,7 @@ def shell
     sudo apt-get -y install slapd ldap-utils
 
     sudo apt-get -y install phpldapadmin
+    sed -e s/password_hash/password_hash_custom/g /usr/share/phpldapadmin/lib/TemplateRender.php > ~/TemplateRender.php.tmp
+    sudo mv ~/TemplateRender.php.tmp /usr/share/phpldapadmin/lib/TemplateRender.php
   eos
 end
