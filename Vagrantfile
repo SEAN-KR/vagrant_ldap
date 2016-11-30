@@ -12,13 +12,14 @@ Vagrant.configure(2) do |config|
   config.vm.provision "file", source: "files/config.php", destination: "/home/vagrant/LDAP_CONFIG/config.php"
 
   # Copy sample set of users to import into OpenLDAP
-  config.vm.provision "file", source: "files/malcolm.ldif", destination: "/home/vagrant/LDAP_CONFIG/malcolm.ldif"
-  config.vm.provision "file", source: "files/jayne.ldif", destination: "/home/vagrant/LDAP_CONFIG/jayne.ldif"
-  config.vm.provision "file", source: "files/inara.ldif", destination: "/home/vagrant/LDAP_CONFIG/inara.ldif"
-  config.vm.provision "file", source: "files/wash.ldif", destination: "/home/vagrant/LDAP_CONFIG/wash.ldif"
-  config.vm.provision "file", source: "files/zoe.ldif", destination: "/home/vagrant/LDAP_CONFIG/zoe.ldif"
-  config.vm.provision "file", source: "files/kaylee.ldif", destination: "/home/vagrant/LDAP_CONFIG/kaylee.ldif"
-  config.vm.provision "file", source: "files/jfhogarty.ldif", destination: "/home/vagrant/LDAP_CONFIG/jfhogarty.ldif"
+  config.vm.provision "file", source: "files/groups.ldif", destination: "/home/vagrant/LDAP_CONFIG/groups.ldif"
+  config.vm.provision "file", source: "files/users.ldif", destination: "/home/vagrant/LDAP_CONFIG/users.ldif"
+  config.vm.provision "file", source: "files/hw.ldif", destination: "/home/vagrant/LDAP_CONFIG/hw.ldif"
+  config.vm.provision "file", source: "files/jang.ldif", destination: "/home/vagrant/LDAP_CONFIG/jang.ldif"
+  config.vm.provision "file", source: "files/kim.ldif", destination: "/home/vagrant/LDAP_CONFIG/kim.ldif"
+  config.vm.provision "file", source: "files/nam.ldif", destination: "/home/vagrant/LDAP_CONFIG/nam.ldif"
+  config.vm.provision "file", source: "files/san.ldif", destination: "/home/vagrant/LDAP_CONFIG/san.ldif"
+  config.vm.provision "file", source: "files/sw.ldif", destination: "/home/vagrant/LDAP_CONFIG/sw.ldif"
   
   # Run provisioning specific to setting up Salt 
   config.vm.provision "shell", path: 'provisioning/phpldapadmin_provision.sh'
