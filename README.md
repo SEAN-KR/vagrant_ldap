@@ -28,7 +28,7 @@ Allow LDAPv2 protocol:  No
 Using your web browser, visit:
 
 ```
-http://localhost:3080/phpldapadmin
+http://localhost:8085/phpldapadmin
 ```
 
 Make sure you update the Login DN to is uses home and net like so:
