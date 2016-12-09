@@ -108,3 +108,7 @@ ldappasswd -s mypassw0rd -W -D "cn=admin,dc=home,dc=net" -x "uid=mreynolds,ou=us
 You will be prompted for the LDAP Admin (cn=admin) password, in our example - support
 ```
 
+
+## 빌드된 이미지
+
+https://drive.google.com/drive/folders/0B-y5Szi9BBVFS0NHS29TQ2d1elk?usp=sharing
