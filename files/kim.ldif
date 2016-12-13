@@ -16,7 +16,7 @@ gidnumber: 501
 givenname: kim
 homedirectory: /home/users/kho
 loginshell: /bin/sh
-mail: kim@gmail.com
+mail: kho@gmail.com
 objectclass: inetOrgPerson
 objectclass: posixAccount
 objectclass: top

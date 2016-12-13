@@ -16,7 +16,7 @@ gidnumber: 501
 givenname: jang
 homedirectory: /home/users/jangho
 loginshell: /bin/sh
-mail: jang@gmail.com
+mail: jangho@gmail.com
 objectclass: inetOrgPerson
 objectclass: posixAccount
 objectclass: top
