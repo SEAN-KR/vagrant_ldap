@@ -27,6 +27,7 @@ Vagrant.configure(2) do |config|
   # Support for phpLDAPadmin on port 80
   config.vm.network "forwarded_port", guest: 80, host: 8085, id: "phpldapadmin"
   config.vm.network "forwarded_port", guest: 389, host: 3890, id: "openldap"
+  config.vm.network "forwarded_port", guest: 4200, host: 4205, id: "shellinabox"
   
   config.vm.provider 'virtualbox' do |vb|
     vb.memory = 1024
@@ -52,7 +53,7 @@ def shell
     " | sudo debconf-set-selections
     sudo apt-get -y install slapd ldap-utils
 
-    sudo apt-get -y install phpldapadmin
+    sudo apt-get -y install phpldapadmin shellinabox
     sed -e s/password_hash/password_hash_custom/g /usr/share/phpldapadmin/lib/TemplateRender.php > ~/TemplateRender.php.tmp
     sudo mv ~/TemplateRender.php.tmp /usr/share/phpldapadmin/lib/TemplateRender.php
   eos
