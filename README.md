@@ -28,8 +28,8 @@ Allow LDAPv2 protocol:  No
 Using your web browser, visit:
 
 
-phpLDAPadmin - http://127.0.0.1:8085/phpldapadmin
-shellinabox - https://127.0.0.1:4205
+phpLDAPadmin - http://127.0.0.1:8085/phpldapadmin  
+shellinabox - https://127.0.0.1:4205  
 
 Make sure you update the Login DN to is uses home and net like so:
 
