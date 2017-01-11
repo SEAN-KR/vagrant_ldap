@@ -1,3 +1,9 @@
+# 프로젝트팀 을 위한 #Slack  
+Androidthings Slack 팀 그룹이 있습니다  
+참여하시고 싶으신 분은  
+https://androidthingskorea.herokuapp.com/  
+이메일주소를 입력하시면 초대장 발송됩니다  
+
 # README - Install OpenLDAP & phpLDAP-Admin
 
 Test that LDAP is working using:
